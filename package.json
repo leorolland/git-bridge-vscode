@@ -21,9 +21,9 @@
         "prepare": "husky install"
     },
     "author": {
-        "name": "YuTengjing",
-        "url": "https://github.com/tjx666",
-        "email": "ytj2713151713@gmail.com"
+        "name": "Léo Rolland",
+        "url": "https://github.com/leorolland",
+        "email": "rolland.leo@orange.fr"
     },
     "badges": [
         {
@@ -69,7 +69,17 @@
                 "command": "git-bridge.helloVSCode",
                 "title": "Hello Visual Studio Code!"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "GitBridge",
+            "properties": {
+                "gitbridge.repositoriesRoot": {
+                    "type": "string",
+                    "default": "$HOME/repositories",
+                    "description": "The root folder where the remote repositories will be cloned"
+                }
+            }
+        }
     },
     "lint-staged": {
         "*.ts": [

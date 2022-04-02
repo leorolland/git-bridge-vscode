@@ -77,6 +77,18 @@
                     "type": "string",
                     "default": "$HOME/repositories",
                     "description": "The root folder where the remote repositories will be cloned"
+                },
+                "gitbridge.preferrredProtocol": {
+                    "type": "string",
+                    "default": "ssh",
+                    "enum": [
+                        "ssh",
+                        "http"
+                    ],
+                    "enumDescriptions": [
+                        "Clone using SSH",
+                        "Clone using HTTP(s)"
+                    ]
                 }
             }
         }

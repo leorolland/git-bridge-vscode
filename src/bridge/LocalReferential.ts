@@ -1,6 +1,6 @@
 import { commands, Uri, workspace } from 'vscode';
 
-import { getLocalReferentialUri } from './Configuration';
+import { getLocalReferentialUri, getPreferredProtocol } from './Configuration';
 import { Location } from './Location';
 
 /**
@@ -17,7 +17,7 @@ export class LocalReferential {
      * @param loc resource location
      */
     localPath(loc: Location): Uri {
-        return Uri.joinPath(this.root, loc.uri.authority, loc.uri.fsPath);
+        return Uri.joinPath(this.root, loc.uri.authority, loc.getRepositoryPath());
     }
 
     getParentFolder(path: string): string {
@@ -53,7 +53,7 @@ export class LocalReferential {
         workspace.fs.createDirectory(this.root);
         commands.executeCommand(
             'git.clone',
-            loc.uri.toString(),
+            getPreferredProtocol() == 'ssh' ? loc.getRemoteAsSSH() : loc.getRemoteAsHTTP(),
             this.getParentFolder(this.localPath(loc).fsPath),
         );
     }

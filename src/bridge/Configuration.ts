@@ -25,3 +25,14 @@ export function getLocalReferentialUri(): string {
     }
     return (<string>val).replaceAll('$HOME', getUserHome());
 }
+
+export function getPreferredProtocol(): string {
+    const val = getConfig().get('preferrredProtocol');
+    if (!val || val == '' || !['ssh', 'http'].includes(<string>val)) {
+        window.showErrorMessage(
+            'Invalid setting gitbridge.preferredProtocol, should be "ssh" or "http"',
+        );
+        return 'ssh';
+    }
+    return <string>val;
+}

@@ -1,9 +1,9 @@
 {
     "name": "git-bridge",
-    "displayName": "Git Bridge",
-    "version": "0.0.1",
+    "displayName": "Git Bridge — Never run 'git clone' again 🪄",
+    "version": "0.0.2",
     "preview": true,
-    "description": "",
+    "description": "Clone (at the perfect location !) and open any repository browsed in Chrome with a single click 🚀",
     "publisher": "leorolland",
     "icon": "images/logo.png",
     "license": "SEE LICENSE IN LICENSE",
@@ -29,47 +29,42 @@
         {
             "url": "https://img.shields.io/badge/License-MIT-brightgreen.svg",
             "description": "License: MIT",
-            "href": "https://github.com/tjx666/vscode-extension-boilerplate/blob/master/LICENSE"
+            "href": "https://github.com/leorolland/git-bridge-vscode/blob/master/LICENSE"
         },
         {
             "url": "https://img.shields.io/badge/PRs-welcome-brightgreen.svg",
             "description": "PRs Welcome",
-            "href": "https://github.com/tjx666/vscode-extension-boilerplate"
+            "href": "https://github.com/leorolland/git-bridge-vscode"
         }
     ],
-    "homepage": "https://github.com/tjx666/vscode-extension-boilerplate/blob/master/README.md",
+    "homepage": "https://github.com/leorolland/git-bridge-vscode",
     "bugs": {
-        "url": "https://github.com/tjx666/vscode-extension-boilerplate/issues",
-        "email": "ytj2713151713@gmail.com"
+        "url": "https://github.com/leorolland/git-bridge-vscode/issues",
+        "email": "rolland.leo@orange.fr"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/tjx666/vscode-extension-boilerplate"
+        "url": "https://github.com/leorolland/git-bridge-vscode"
     },
     "engines": {
         "vscode": "^1.51.0",
         "node": ">=14.15.1"
     },
     "categories": [
+        "SCM Providers",
         "Other"
     ],
     "keywords": [
-        "vscode",
-        "vscode-extension",
-        "vscode-extension-boilerplate",
-        "boilerplate"
+        "bridge",
+        "git",
+        "open",
+        "clone",
+        "chrome"
     ],
     "activationEvents": [
-        "onCommand:git-bridge.helloVSCode",
         "onUri"
     ],
     "contributes": {
-        "commands": [
-            {
-                "command": "git-bridge.helloVSCode",
-                "title": "Hello Visual Studio Code!"
-            }
-        ],
         "configuration": {
             "title": "GitBridge",
             "properties": {
